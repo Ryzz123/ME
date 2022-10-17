@@ -35,3 +35,6 @@ const lang = [
     school: "WEB PHP",
   }
 ];
+
+export default lang;
+
