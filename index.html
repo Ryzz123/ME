@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  :root {
+    --color-brand: blue;
+    --second-color: red;
+  }
+  
+  .root {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: var(--color-brand);
+    animation-name: root;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes root {
+    50% {
+      height: 300px;
+      width: 300px;
+    }
+    100% {
+      height: 200px;
+      width: 200px;
+      background: var(--second-color);
+    }
+  }
+  
+  .gambar {
+    border: 2px solid black;
+    position: relative;
+    top: 2rem;
+    width: 50%;
+    text-align: center;
+    background: blueviolet;
+  }
+</style>
+<body>
+  <div class="root"></div>
+  <div class="gambar">
+    <img width="160" src="https://i.postimg.cc/Vs7NXqr0/animasi-css.png" alt="">
+  </div>
+</body>
+</html>
