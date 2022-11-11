@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <label for="">Encode</label><br>
+    <input type="text">
+    <input onclick="ncode()" type="button" value="IMPORT">
+            <p></p>
+    <input onclick="dcode()" type="button" value="REQUIRED">
+        <p></p>
+    <script>
+        const encode = document.querySelector("input");
+        const write = document.querySelectorAll("p");
+        
+        var x = null;
+        function ncode() {
+            const nilai = btoa(encode.value);
+            write[0].innerHTML = nilai;
+            x = nilai;
+            return x;
+        }
+        
+        function dcode() {
+          const nilai = atob(x);
+          write[1].innerHTML = nilai;
+        }
+    </script>
+</body>
+</html>
