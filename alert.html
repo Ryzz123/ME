@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .input-box {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+        height: 250px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        justify-content: center;
+        border: solid grey 1px;
+    }
+    
+    .input-dalam {
+        padding: 50px 15px;
+        background-color: teal;
+        border-radius: 10px;
+        border: solid black 1px;
+        box-shadow: 6px 6px 7px grey;
+    }
+    
+    .input {
+        border: none;
+        background-color: rgba(255,255,255,0);
+        color: white;
+    }
+    
+    .input::placeholder {
+        color: white;
+        font-style: italic;
+    }
+    
+    .input::selection {
+        border: none;
+    }
+    
+    .input-button {
+        padding: 4px 8px;
+        border: 1px solid white;
+        border-radius: 5px;
+        background: teal;
+        color: white;
+    }
+</style>
+<body>
+    <div class="input-box">
+        <div class="input-dalam">
+                    <input type="text" class="input" placeholder="masukan pesan">
+        <input onclick="alertme()" type="submit" class="input-button" value="CLICK">
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector(".input");
+        function alertme() {
+            if(input.value == "") {
+                alert("Tidak Boleh Kosong!!")
+            } else {
+                alert(input.value)
+            }
+        }
+    </script>
+</body>
+</html>
