@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+        margin; 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        width: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .box-kuiz {
+        height: 250px;
+        width: 95%;
+        margin: auto;
+        border: 1px solid black;
+        border-radius: 8px;
+    }
+    
+    .button-box {
+        display: flex;
+        gap: 1.2em;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    
+    .button {
+        background: blue;
+        border: none;
+        padding: 12px 15px;
+        border-radius: 4px;
+        color: white;
+    }
+    
+    .button:hover {
+        background: lightblue;
+    }
+    
+    .jawaban {
+        color: black;
+        text-align: center;
+        font-family: Arial;
+        font-size: 24px;
+        padding: 10px;
+    }
+</style>
+<body>
+  <div class="container">
+      <div class="box-kuiz">
+          
+      </div>
+      <div class="button-box">
+          <button onclick="functionTrue()" type="submit" class="button">TRUE</button>
+          <button onclick="functionFalse()" class="button" type="submit">FALSE</button>
+          <button onclick="acak()" type="submit" class="button">
+              ACAK
+          </button>
+      </div>
+      <p class="nyawa"></p>
+  </div>
+  <script>
+      const layout = document.querySelector(".box-kuiz");
+      
+      const layoutNyawa = document.querySelector(".nyawa")
+      
+      var nyawa = 3;
+      
+      const tampil = () => {
+          layoutNyawa.innerHTML = `Sisa nyawa ${nyawa}`;
+      }
+      
+      const soal = [
+          {
+              id: 1,
+              pertanyaan: "Bener atau tidak bumi itu bulat?",
+              jawaban: true,
+              detik: 10,
+          },
+          {
+              id: 2,
+              pertanyaan: "Bener atau tidak Febri baik?",
+              jawaban: true,
+              detik: 10
+          },
+          {
+              id: 3,
+              pertanyaan: "Benarkah sebuah benda besar yang jatuh ke bumi dinamakan meteor?",
+              jawaban: false,
+              detik: 10
+          }
+         ]
+       
+      var id = null; 
+         
+      const acak = () => {
+          const nilaiAcak = Math.round(Math.random() * 3);
+          id = nilaiAcak;
+          layout.innerHTML = `<p class="jawaban">${soal[nilaiAcak].pertanyaan}</p>`;
+      }
+         
+      const functionTrue = () => {
+          if(nyawa == 0) {
+              alert("nyawa kamu tidak cukup");
+          } else {
+              if(soal[id].jawaban == true) {
+              return alert("Bener");
+          } else {
+            alert("jawaban salah");
+            nyawa -= 1;
+            tampil();
+          }
+          }
+      }
+      
+      const functionFalse = () => {
+          if(nyawa == 0) {
+              alert("nyawa kamu tidak cukup");
+          } else {
+              if(soal[id].jawaban == false) {
+              return alert("Benar");
+          } else {
+            alert("jawaban salah");
+            nyawa -= 1;
+            tampil();
+          }
+          }
+      }
+      
+      tampil();
+  </script>
+</body>
+</html>
