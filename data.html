@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+        let data = [];
+      
+        // api fetching
+       const getMyApi = async () =>
+       {
+           const request = await fetch("https://puce-crow-cuff.cyclic.app/api/v1/histori");
+           const response = await request.json();
+           data = response;
+           console.log(response);
+       }
+       getMyApi();
+       
+       setTimeout(() => {
+           data.forEach((e) => {
+               document.write(`<div class="style"><h2>${e.histori}</h2></div>`);
+           })
+       }, 2000)
+       
+    </script>
+</body>
+</html>
